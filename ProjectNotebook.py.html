@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Project Description
+
+# Here I created a jepordy game! The topics in this game are: colors, math, ucsd and pets. There are levels for every category. For every correct answer, you will get a certain amount of points. For every question answered wrong, you will not be given points. 
+# 
+# Note that projects should be self-sufficient, so make sure to provide enough information and context here for someone to understand what you are doing in your project, and why. 
+
+# ## Project Code
+# 
+# If it makes sense for your project, you can have code and outputs here in the notebook as well.
+
+# In[13]:
+
+
+from my_module.jepordypython import user_interaction
+
+from my_module.jepordypython import game_responce
+
+from my_module.jepordypython import check_answer
+
+points = 0
+picked = []
+
+for x in range(3):
+    print("------\nTURN " + str(x + 1))
+    
+    category, difficulty = user_interaction(picked)
+    
+    answer, rad = game_responce(category, difficulty, picked)
+    
+    points = check_answer(answer, rad, category, difficulty, points)
+
+
+# In[14]:
+
+
+# Do a bunch of things.
+assert callable(user_interaction)
+
+
+# In[15]:
+
+
+assert callable(game_responce)
+
+
+# In[16]:
+
+
+assert callable(check_answer)
+
+
+# In[18]:
+
+
+# test it out
+get_ipython().system('pytest my_module/test_file.py')
+
+
+# #### Extra Credit (*optional*)
+# 
+# Replace all of this text with a brief explanation (~3 sentences) of: 
+# 
+# I have no experience with python, this is my first programing class. Having never programed before I decied to tackle a chat-box jepordy game. I went above and beyond by creating a program that allows users to interact and provide a collective points system as well. I ensured that users cannot pick the same question twice. I challenged myself by creating a code that randomly distributes possible answers for a question. Each time a user runs through the game, the correct answer will be in a different location. 
+# 
+
+# In[ ]:
+
+
+
+
